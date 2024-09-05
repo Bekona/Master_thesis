@@ -40,7 +40,7 @@ class NoisyLabelSimulation:
         indices_class_1 = np.where(y == 1)[0]
         indices_class_minus_1 = np.where(y == -1)[0]
     
-        # Apply noise based on whether it's Unbiased Estimator (with positive/negative rates) or Importance Reweighting (single noise rate)
+        # Apply noise based on whether it's Unbiased Estimator, Label-Dependent Costs (with positive/negative rates) or Importance Reweighting (single noise rate)
         if self.noise_rate is not None:
             # Importance Reweighting: Single noise rate
             n_noisy = int(self.noise_rate * self.n_samples)
@@ -66,7 +66,7 @@ class NoisyLabelSimulation:
             if len(indices_class_minus_1) > 1:
                 flip_indices_class_minus_1 = self.rng.choice(indices_class_minus_1, size=n_flip_class_minus_1, replace=False)
                 y_noisy[flip_indices_class_minus_1] = -y_noisy[flip_indices_class_minus_1]
-
+                        
         # Store the generated data
         self.X, self.y, self.y_noisy = X, y, y_noisy
 
