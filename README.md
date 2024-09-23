@@ -6,6 +6,7 @@ To run the experiments, you can open and execute the corresponding Jupyter noteb
 - `unbiased_estimators.ipynb`: Implements and evaluates the Unbiased Estimator method.
 - `label_dependent_costs.ipynb`: Implements and evaluates the Label-Dependent Costs method.
 - `importance_reweighting.ipynb`: Implements and evaluates the Importance Reweighting method.
+
 In the folder `uncorrelated_data` you can find the implementation of the methods using uncorrelated data.
 
 References for these methods are:
